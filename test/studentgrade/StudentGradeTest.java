@@ -1,14 +1,24 @@
 package studentgrade;
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import junit.framework.TestCase;
-
-/* JUnit 3.8.1 */
-public class StudentGradeTest extends TestCase {
+/* JUnit4 */
+public class StudentGradeTest {
     
-    public StudentGradeTest(String testName) {
-        super(testName);
+    public StudentGradeTest() {
+    }
+    
+    @Before
+    public void setUp() {
     }
 
+    @After
+    public void tearDown() {
+    }
+    // We need before each test method add @Test to indicate it's a test case.
+    @Test
     public void testGetGrade95() {
         System.out.println("getGrade 95");
         int mark = 95;
@@ -16,7 +26,7 @@ public class StudentGradeTest extends TestCase {
         String result = StudentGrade.getGrade(mark);
         assertEquals(expResult, result);
     }
-
+    @Test
     public void testGetGrade85() {
         System.out.println("getGrade 85");
         int mark = 85;
@@ -24,7 +34,7 @@ public class StudentGradeTest extends TestCase {
         String result = StudentGrade.getGrade(mark);
         assertEquals(expResult, result);
     }
-    
+    @Test
     public void testGetGrade75() {
         System.out.println("getGrade 85");
         int mark = 75;
